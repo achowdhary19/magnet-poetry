@@ -3,7 +3,7 @@ import React from "react";
 import Draggable from "react-draggable";
 import "../App.css";
 import myface from "../assets/myface.txt?raw";
-import wetsound from "../src/assets/wet.wav";
+import wetsound from "../assets/wet.wav";
 
 function Tab() {
   let arr = myface.split("\n");
@@ -20,6 +20,7 @@ function Tab() {
   const nodeRef = React.useRef(null);
 
   let wet = new Audio(wetsound);
+
   const startAudio = () => {
     wet.play();
   };
