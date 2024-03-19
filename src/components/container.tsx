@@ -4,7 +4,6 @@ import { CUSTOM_BRUSH_PRESET } from "react-scratchcard-v4";
 import Scratch from "./Scratch";
 
 interface Props {
-  heading: string;
   img1?: string;
   img2?: string;
   img3?: string;
@@ -13,14 +12,7 @@ interface Props {
   // popup: string;
 }
 
-const container = ({
-  heading,
-  img1,
-  img2,
-  img3,
-  background,
-  overlay,
-}: Props) => {
+const container = ({ img1, img2, img3, background, overlay }: Props) => {
   const ref = useRef<ScratchCard>(null);
 
   const onClickReset = () => {

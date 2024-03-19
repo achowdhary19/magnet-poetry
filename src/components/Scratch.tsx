@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ScratchCard from "react-scratchcard-v4";
 import { CUSTOM_BRUSH_PRESET } from "react-scratchcard-v4";
+import itch from "../assets/itch.wav";
 
 interface Props {
   background: string;
@@ -10,18 +11,26 @@ interface Props {
 
 const Scratch = ({ background, overlay }: Props) => {
   const ref = useRef<ScratchCard>(null);
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (value == 1) {
+      startAudio;
+    }
+  }, [value]);
 
   const onClickReset = () => {
     ref.current && ref.current.reset();
   };
 
-  let audio = new Audio("../src/assets/itch.wav");
+  let noise = new Audio(itch);
+
   const startAudio = () => {
-    audio.play();
+    noise.play();
   };
 
   const stopAudio = () => {
-    audio.pause();
+    noise.pause();
   };
 
   return (
@@ -31,7 +40,9 @@ const Scratch = ({ background, overlay }: Props) => {
       <div
         className="rounded img-fluid"
         onMouseDown={startAudio}
+        // onMouseDown={() => setValue(1)}
         onMouseUp={stopAudio}
+        // onMouseUp={() => setValue(0)}
       >
         <ScratchCard
           width={550}
