@@ -2,7 +2,7 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://achowdhary19.github.io/poem-builder/",
+  "homepage": "https://achowdhary19.github.io/magnet-poetry/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
