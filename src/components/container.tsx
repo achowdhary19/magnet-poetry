@@ -11,8 +11,6 @@ interface Props {
   background?: string;
   overlay?: string;
   // popup: string;
-
-  scratchOff?: () => void;
 }
 
 const container = ({
@@ -36,7 +34,7 @@ const container = ({
 
   const open = () => {
     window.open(
-      "../src/popup1.html",
+      "./src/popup1.html",
       "popUpWindow",
       "height=100,width=100,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes, target=_parent"
     );
@@ -51,12 +49,7 @@ const container = ({
           {/* first item, row of items spaced between  */}
           <div className="d-flex starsdiv justify-content-between">
             <img className="star" src="../src/assets/star1.png" alt="" />
-            <a
-              className="d-flex"
-              //href="https://sliding.toys/mystic-square/8-puzzle/daily/"
-              onClick={open}
-              target="_blank"
-            >
+            <a className="d-flex" onClick={open} target="_blank">
               eHELLO
             </a>
             <img className="star" src="../src/assets/star3.png" alt="" />
@@ -73,7 +66,12 @@ const container = ({
           <div className="spacer"></div>
           {/* third item, row of items */}
           <div className="d-flex img-fluid">
-            <Scratch background={background} overlay={overlay}></Scratch>
+            <Scratch
+              // onMouseDown={onClickReset}
+              background={background}
+              overlay={overlay}
+            ></Scratch>
+            <button onClick={onClickReset}>Reset</button>
           </div>
           <div className="spacer"></div>
           {/* fourth item */}

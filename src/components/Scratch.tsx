@@ -5,6 +5,7 @@ import { CUSTOM_BRUSH_PRESET } from "react-scratchcard-v4";
 interface Props {
   background: string;
   overlay: string;
+  onMouseDown?: () => void;
 }
 
 const Scratch = ({ background, overlay }: Props) => {
@@ -14,9 +15,24 @@ const Scratch = ({ background, overlay }: Props) => {
     ref.current && ref.current.reset();
   };
 
+  let audio = new Audio("../src/assets/itch.wav");
+  const startAudio = () => {
+    audio.play();
+  };
+
+  const stopAudio = () => {
+    audio.pause();
+  };
+
   return (
-    <div>
-      <div className="rounded img-fluid">
+    <>
+      {/* div  className="rounded img-fluid" */}
+
+      <div
+        className="rounded img-fluid"
+        onMouseDown={startAudio}
+        onMouseUp={stopAudio}
+      >
         <ScratchCard
           width={550}
           height={73}
@@ -31,7 +47,7 @@ const Scratch = ({ background, overlay }: Props) => {
           </div>
         </ScratchCard>
       </div>
-    </div>
+    </>
   );
 };
 

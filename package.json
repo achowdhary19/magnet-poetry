@@ -2,11 +2,11 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://achowdhary19.github.io/poem-builder",
+  "homepage": "https://achowdhary19.github.io/poem-builder/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build",
+    "deploy": "gh-pages -d dist",
     "start": "react-scripts start",
     "dev": "vite",
     "build": "tsc && vite build",
