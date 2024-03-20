@@ -2,6 +2,10 @@ import React, { Fragment, useRef, useEffect } from "react";
 import ScratchCard from "react-scratchcard-v4";
 import { CUSTOM_BRUSH_PRESET } from "react-scratchcard-v4";
 import Scratch from "./Scratch";
+import star3 from "../src/assets/star3.png";
+import star2 from "../src/assets/star2.png";
+import star1 from "../src/assets/star1.png";
+import star5 from "../src/assets/star5.png";
 
 interface Props {
   img1?: string;
@@ -42,12 +46,12 @@ const container = ({ img1, img2, img3, background, overlay }: Props) => {
           <div className="d-flex starsdiv justify-content-between">
             <img className="star" src="../src/assets/star1.png" alt="" />
             <a className="d-flex" onClick={open} target="_blank">
-              eHELLO
+              eHtestingELLO
             </a>
-            <img className="star" src="../src/assets/star3.png" alt="" />
-            <img className="star" src="../src/assets/star2.png" alt="" />
-            <img className="star" src="../src/assets/star1.png" alt="" />
-            <img className="star" src="../src/assets/star5.png" alt="" />
+            <img className="star" src={star3} alt="" />
+            <img className="star" src={star2} alt="" />
+            <img className="star" src={star1} alt="" />
+            <img className="star" src={star5} alt="" />
           </div>
           <div className="spacer"></div>
           {/* second item, row of items, aligned bottom relative to the cross axis */}
