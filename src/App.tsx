@@ -10,7 +10,7 @@ import cows from "../src/assets/ppokokmyPanel 3.png";
 import bunnies from "../src/assets/bunniesinsnow.png";
 import background from "../src/assets/bunniesinsnow.png";
 import overlay from "../src/assets/overlay.png";
-
+import testing from "../src/assets/testing.JPG";
 import "./App.css";
 
 function App() {
